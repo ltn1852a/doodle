@@ -1,0 +1,16 @@
+<table class="table table-bordered">
+	<thead class="thead-inverse">
+		<tr>
+			<th>Evénement</th>
+			<th>Description</th>
+			<th>Accéder aux détails</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="evennement in tab">
+			<td>{{evennement.name}}</td>
+			<td>{{evennement.description}}</td>
+			<td><input type="button" name="detail" value="detail" ng-click="details()" class="btn btn-info"></td>
+		</tr>
+	</tbody>
+</table>
