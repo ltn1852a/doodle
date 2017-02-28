@@ -8,7 +8,6 @@ function Evennement(id, description) {
   this.description = description;
   // la liste de crenaux
   this.creneaux = new Array();
-
 }
 
 // Constructeur pour les Creneaux
@@ -28,7 +27,7 @@ var creerEvennement = function (id, description){
 		return 1;
 	}
 	return 0;
-}
+};
 	
 var ajouterCreneau = function (id, date, heure){
 	if (typeof evennements[id] === 'undefined') {
@@ -38,7 +37,7 @@ var ajouterCreneau = function (id, date, heure){
 		return 1;
 	}
 	return 0;
-}
+};
 
 
 // les 4 fonctions exportées
