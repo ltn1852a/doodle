@@ -1,0 +1,4 @@
+{ "personne" : { "name":"John", "age":32, "city":"New York" },
+"personne" : { "name":"Jane", "age":41, "city":"New York" },
+"personne" : { "name":"Jim", "age":31, "city":"New York" }
+}
