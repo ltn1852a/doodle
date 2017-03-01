@@ -1,6 +1,6 @@
 var fs = require("fs");
 var express = require('express');
-var evennements = require('./evennements');
+var evennements = require('./evenements');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(express.static(__dirname + '/app'));
@@ -12,14 +12,15 @@ app.use(bodyParser.json());
 
 app.get('/evenements', function(req, res) { 
 	fs.readFile('evenements.json', 'utf8', function (err,data) {
-	  if (err) {
-		return console.log(err);
-	  }
-	  console.log(data);
-	//res.json(data);
-});
-  console.log(req.params.id); 
-  res.json(evennements.getEvennement);
+		if (err) {
+			console.log(err);
+		}
+		
+		console.log(data);
+		var obj = JSON.parse(data);
+		res.json(obj);
+	});
+  console.log(req.params.id);
 });
 
 app.post('/idevenement', function (req, res){

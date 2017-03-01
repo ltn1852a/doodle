@@ -7,25 +7,27 @@
  * # MainCtrl
  * Controller of the nodejsApp
  */
+console.log("TOTO1");
 angular.module('nodejsApp')
-  .controller('EventsCtrl', ['$scope', 
-    function($scope) {  
-	$scope.tab=[];
-	$scope.afficher = function() {
-	$scope.tab=Evennement.get();
-		}	;
-	
-	}]);
-	
-angular.module('nodejsApp', ['ngResource'])
-  .factory('Evennement', ['$resource',
+  .factory('Evenement', ['$resource',
     function($resource){
+		console.log("TOTO4");
       return $resource('/evenements', {},
         {
-          'get': {method: 'GET'}
+          'get': {method: 'GET', isArray:true}
         }
       );
     }
   ]);
+ 
+console.log("TOTO2");
 
-})(window.angular);
+angular.module('nodejsApp')
+  .controller('EventsCtrl',
+    function($scope, Evenement){
+		console.log("TOTO");
+		$scope.tab=Evenement.get();
+	});
+
+ console.log("TOTO3");
+

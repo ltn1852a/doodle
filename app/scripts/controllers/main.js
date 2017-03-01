@@ -2,30 +2,17 @@
 
 /**
  * @ngdoc function
- * @name nodejsApp.controller:MainCtrl
+ * @name banqueApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the nodejsApp
+ * Controller of the banqueApp
  */
 angular.module('nodejsApp')
-  .controller('EventsCtrl', ['$scope', 
-    function($scope) {  
-	$scope.tab=[];
-	$scope.afficher = function() {
-	$scope.tab=Evennement.get();
-		}	;
-	
-	}]);
-	
-angular.module('nodejsApp', ['ngResource'])
-  .factory('Evennement', ['$resource',
-    function($resource){
-      return $resource('/evennement', {},
-        {
-          'get': {method: 'GET'}
-        }
-      );
-    }
-  ]);
-
-})(window.angular);
+  .controller('MainCtrl', function ($scope) {
+	$scope.name = "Mon bouton";
+    this.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  });
