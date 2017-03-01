@@ -22,4 +22,8 @@ app.get('/evenements', function(req, res) {
   res.json(evennements.getEvennement);
 });
 
+app.post('/idevenement', function (req, res){
+	res.send()
+});
+
 app.listen(8080);
