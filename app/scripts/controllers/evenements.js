@@ -20,7 +20,7 @@ angular.module('nodejsApp')
 angular.module('nodejsApp', ['ngResource'])
   .factory('Evennement', ['$resource',
     function($resource){
-      return $resource('/evennement', {},
+      return $resource('/evenements', {},
         {
           'get': {method: 'GET'}
         }

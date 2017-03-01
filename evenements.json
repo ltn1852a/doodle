@@ -1,4 +1,4 @@
-{ { "id":"Evt1", "description":"desc", "crenaux":{} },
+[ { "id":"Evt1", "description":"desc", "crenaux":{} },
 { "id":"Evt2", "description":"desc", "crenaux":{} },
 { "id":"Evt3", "description":"desc", "crenaux":{} }
-}
+]

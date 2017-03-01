@@ -10,7 +10,14 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.json());
 
-app.get('/evennement', function(req, res) { 
+app.get('/evenements', function(req, res) { 
+	fs.readFile('evenements.json', 'utf8', function (err,data) {
+	  if (err) {
+		return console.log(err);
+	  }
+	  console.log(data);
+	//res.json(data);
+});
   console.log(req.params.id); 
   res.json(evennements.getEvennement);
 });
