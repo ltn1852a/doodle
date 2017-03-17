@@ -23,9 +23,12 @@ app.get('/evenements', function(req, res) {
 	});
   console.log(req.params.id);
   */
+
   console.log(evenements.getEvennement());
-  var obj = JSON.stringify(evenements.getEvennement());
-  res.json(obj);
+  //var obj = JSON.stringify(evenements.getEvennement());
+  
+  res.json(evenements.getEvennement());
+ 
 });
 
 app.post('/creerEvenement', function(req, res) { 

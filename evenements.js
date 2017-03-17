@@ -20,7 +20,11 @@ function Creneau(date, heure) {
 }
 
 var getEvennement=function(){
-  return evennements;
+	var tab = new Array();
+	for (prop in evennements) {
+		tab.push(evennements[prop]);
+	}
+  return tab;
 }
 
 

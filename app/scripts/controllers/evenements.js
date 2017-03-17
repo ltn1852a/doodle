@@ -26,8 +26,7 @@ angular.module('nodejsApp')
   .controller('EventsCtrl',
     function($scope, Evenement){
 		$scope.tab=Evenement.get();
-		
-		console.log($scope.tab[0]);
+		console.log($scope.tab);
 	});
 
 // console.log("TOTO3");
