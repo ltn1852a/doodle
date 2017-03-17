@@ -1,9 +1,9 @@
 angular.module('nodejsApp')
   .factory('CreerEvenement', ['$resource',
     function($resource){
-      return $resource('/creerEvenement/:idEvenement/:descEvenement', {},
+      return $resource('/creerEvenement', {},
         {
-          'get': {method: 'GET'}
+          'post': {method: 'POST'}
         }
       );
     }
@@ -14,5 +14,9 @@ angular.module('nodejsApp')
     function($scope, CreerEvenement){
 		$scope.idEvenement;
 		$scope.descEvenement;
-		$scope.creer = CreerEvenement.get({idEvenement : $scope.idEvenement}, {descEvenement : $scope.descEvenement});
+		
+		$scope.creer = function(){
+			var evenement = {"idEvenement" : $scope.idEvenement, "descEvenement" : $scope.descEvenement};
+			CreerEvenement.post(JSON.stringify(evenement));
+		}
 	});

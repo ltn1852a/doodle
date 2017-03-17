@@ -26,6 +26,7 @@ var getEvennement=function(){
 
 var creerEvennement = function (id, description){
 	// s'il n'existe pas
+	console.log(id, description);
 	if (typeof evennements[id] === 'undefined') {
 		// on le cree
 		evennements[id] = new Evennement(id, description);
