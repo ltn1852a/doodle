@@ -7,11 +7,11 @@
  * # MainCtrl
  * Controller of the nodejsApp
  */
-console.log("TOTO1");
+//console.log("TOTO1");
 angular.module('nodejsApp')
   .factory('Evenement', ['$resource',
     function($resource){
-		console.log("TOTO4");
+		//console.log("TOTO4");
       return $resource('/evenements', {},
         {
           'get': {method: 'GET', isArray:true}
@@ -20,14 +20,14 @@ angular.module('nodejsApp')
     }
   ]);
  
-console.log("TOTO2");
+//console.log("TOTO2");
 
 angular.module('nodejsApp')
   .controller('EventsCtrl',
     function($scope, Evenement){
-		console.log("TOTO");
+		//console.log("TOTO");
 		$scope.tab=Evenement.get();
 	});
 
- console.log("TOTO3");
+// console.log("TOTO3");
 

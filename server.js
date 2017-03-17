@@ -23,8 +23,13 @@ app.get('/evenements', function(req, res) {
   console.log(req.params.id);
 });
 
+app.get('/creerEvenement', function(req, res) { 
+	console.log("créer événement") 
+	res.send();
+});
+
 app.post('/idevenement', function (req, res){
-	res.send()
+	res.send();
 });
 
 app.listen(8080);

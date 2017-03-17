@@ -1,0 +1,24 @@
+<h2>{{evenement.id}}</h2>
+<p  class="lead">{{evenement.description}}</p>
+<label for="table_creneaux">Table des créneaux</label>
+<table id="table_creneaux" class="table table-bordered">
+	<thead class="thead-inverse">
+		<tr>
+			<th>Créneau</th>
+			<th>Date</th>
+			<th>Heure</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="creneau in tab">
+			<td>{{creneau.date}}</td>
+			<td>{{creneau.heure}}</td>
+			<td><input type="checkbox" name="participer" value="{{creneau.date + creneau.heure}}" 
+				data-off-label="false" data-on-label="false" 
+				data-off-icon-cls="glyphicon-thumbs-down" 
+				data-on-icon-cls="glyphicon-thumbs-up">
+			</td>
+		</tr>
+	</tbody>
+</table>
+<input type="button" value="Valider vos choix de disponibilités" class="btn btn-info" ng-acttion=""/>
