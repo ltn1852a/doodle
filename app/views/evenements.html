@@ -10,7 +10,25 @@
 		<tr ng-repeat="evenement in tab">
 			<td>{{evenement.id}}</td>
 			<td>{{evenement.description}}</td>
-			<td><input type="button" name="detail" value="detail" ng-click="details()" class="btn btn-info"></td>
+			<td><input type="button" name="detail" value="detail" ng-click="details(evenement.creneaux)" class="btn btn-info"></td>
 		</tr>
 	</tbody>
 </table>
+<p ng-bind="user.nom"></p>
+<table class="table table-bordered">
+	<thead class="thead-inverse">
+		<tr>
+			<th>Date</th>
+			<th>Heure</th>
+			<th>Accepté</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="creneau in tabCreneaux">
+			<td>{{creneau.date}}</td>
+			<td>{{creneau.heure}}</td>
+			<td><input type="checkbox" name="accepter" value="{{creneau}}" class="btn btn-info"></td>
+		</tr>
+	</tbody>
+</table>
+<button name="valider" ng-click="valider()" class="btn btn-info">Valider</button>

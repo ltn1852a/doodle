@@ -1,0 +1,15 @@
+<h2>Ajouter des créneaux</h2>
+<p>Choisir un évènement</p>
+
+<select  ng-model="idEvenement">
+	<option ng-repeat="evenement in tab" value="{{evenement.id}}">{{evenement.id}}</option>
+</select>
+
+<div class="form-group">
+	<h2>Ajouter des creneaux</h2>
+	<label for="dateCreneau">Date du creneaux</label>
+	<input type="date" name="dateCreneau" id="dateCreneau" class="form-control" ng-model="dateCreneau"/>
+	<label for="heureCreneau">Heure du creneaux</label>
+	<input type="heure" name="heureCreneau" id="heureCreneau" class="form-control" ng-model="heureCreneau"/>
+	<button type="button" class="btn btn-default" ng-click="ajouter()">Ajouter</button>
+</div>

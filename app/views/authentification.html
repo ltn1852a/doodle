@@ -1,0 +1,13 @@
+<div>
+	<h2>S'authentifier</h2>
+	<div>
+		<label for="pseudo">Pseudo</label>
+		<input type="text" name="pseudo" id="pseudo" class="form-control" ng-model="pseudo"/>
+		<label for="motPasse">Mot de passe</label>
+		<input name="motPasse" id="motPasse" class="form-control" ng-model="motPasse"/>
+		<button type="button" class="btn btn-default" ng-click="inscrire()">Valider</button>
+	</div>
+	<div>
+		<p>Bonjour <span id="nom" ng-bind="authentifie.nom" ng-model="authentifie.nom" ng-change="verif()"></span><span ng-bind="authentifie.nom"></span> ! </p>
+	</div>
+</div>

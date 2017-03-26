@@ -18,5 +18,7 @@ angular.module('nodejsApp')
 		$scope.creer = function(){
 			var evenement = {"idEvenement" : $scope.idEvenement, "descEvenement" : $scope.descEvenement};
 			CreerEvenement.post(JSON.stringify(evenement));
+			$scope.idEvenement = "";
+			$scope.descEvenement = "";
 		}
 	});

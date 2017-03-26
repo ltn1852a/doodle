@@ -27,6 +27,9 @@ var getEvennement=function(){
   return tab;
 }
 
+var getEvt = function(id){
+  return evennements[id];
+}
 
 var creerEvennement = function (id, description){
 	// s'il n'existe pas
@@ -41,8 +44,10 @@ var creerEvennement = function (id, description){
 };
 	
 var ajouterCreneau = function (id, date, heure){
-	if (typeof evennements[id] === 'undefined') {
+	if (typeof evennements[id] != 'undefined') {
 		// on ajoute
+		console.log(id);
+		console.log(date);
 		evennements[id].creneaux.push(new Creneau(date, heure));
 		//console.log(evennements);
 		return 1;
@@ -52,6 +57,8 @@ var ajouterCreneau = function (id, date, heure){
 
 
 // les 4 fonctions exportées
+exports.evts = evennements;
+exports.getEvt = getEvt;
 exports.creerEvennement = creerEvennement;
 exports.ajouterCreneau = ajouterCreneau;
 exports.getEvennement=getEvennement;

@@ -20,9 +20,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/evenements.html',
-        controller: 'EventsCtrl',
-        controllerAs: 'evenements'
+        templateUrl: 'views/authentification.html',
+        controller: 'Authentif',
+        controllerAs: 'authentification'
       })
       .when('/evenements', {
         templateUrl: 'views/evenements.html',
@@ -33,6 +33,21 @@ angular
         templateUrl: 'views/creerEvenement.html',
         controller: 'CreerEventsCtrl',
         controllerAs: 'creerEvenement'
+      })
+	  .when('/ajoutCreneau', {
+        templateUrl: 'views/ajoutCreneau.html',
+        controller: 'AjoutCreneauCtrl',
+        controllerAs: 'ajoutCreneau'
+      })
+	  .when('/creerUti', {
+        templateUrl: 'views/creerUti.html',
+        controller: 'CreerUtiCtrl',
+        controllerAs: 'creerUti'
+      })
+	  .when('/authentification', {
+        templateUrl: 'views/authentification.html',
+        controller: 'Authentif',
+        controllerAs: 'authentification'
       })
       .otherwise({
         redirectTo: '/'

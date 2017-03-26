@@ -26,7 +26,10 @@ angular.module('nodejsApp')
   .controller('EventsCtrl',
     function($scope, Evenement){
 		$scope.tab=Evenement.get();
-		console.log($scope.tab);
+		$scope.user = window.user;
+		$scope.details = function(creneaux){
+			$scope.tabCreneaux = creneaux;
+		}
 	});
 
 // console.log("TOTO3");

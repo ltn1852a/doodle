@@ -55,6 +55,9 @@
             <ul class="nav navbar-nav">
 				<li><a ng-href="#!/authentification">Authentification</a></li>
 				<li><a ng-href="#!/creerUti">Inscription</a></li>
+				<li><a href="#/">Evènements</a></li>
+				<li><a ng-href="#!/creerEvenement">Créer évènement</a></li>
+				<li><a ng-href="#!/ajoutCreneau">Ajouter des créneaux</a></li>
             </ul>
           </div>
         </div>
@@ -98,7 +101,12 @@
 
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/main.js"></script>
+	<script src="scripts/controllers/about.js"></script>
+	<script src="scripts/controllers/evenements.js"></script>
+	<script src="scripts/controllers/creerEvenement.js"></script>
 	<script src="scripts/controllers/creerUti.js"></script>
+	<script src="scripts/controllers/ajoutCreneau.js"></script>
 	<script src="scripts/controllers/authentif.js"></script>
 	<!-- endbuild -->
 </body>
