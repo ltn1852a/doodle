@@ -22,6 +22,7 @@ angular.module('nodejsApp')
 		$scope.ajouter = function(){
 			var creneau = {"idEvenement" : $scope.idEvenement, "dateCreneau" : $scope.dateCreneau, "heureCreneau" : $scope.heureCreneau};
 			AjouterCreneau.post(JSON.stringify(creneau));
+			alert("Le créneau (date : " + $scope.dateCreneau + ", heure : " + $scope.heureCreneau + ") a bien été ajouté.");
 			$scope.dateCreneau = "";
 			$scope.heureCreneau = "";
 		}

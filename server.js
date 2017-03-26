@@ -29,13 +29,18 @@ app.get('/authentification/:pseudo/:motPasse', function(req, res) {
 	res.json(rep);
 });
 
+app.get('/utilisateur/:pseudo', function(req, res) { 
+	res.json(utilisateurs.getUtilisateur(req.params.pseudo));
+});
+
 app.post('/creerUti', function(req, res) { 
 	utilisateurs.creerUtilisateur(req.body.pseudo, req.body.nom, req.body.prenom, req.body.motPasse);
 	res.send();
 });
 
 app.post('/creerEvenement', function(req, res) { 
-	evenements.creerEvennement(req.body.idEvenement, req.body.descEvenement);
+	var evt = evenements.creerEvennement(req.body.idEvenement, req.body.descEvenement);
+	utilisateurs.ajouterEvenementsCree(evt, req.body.pseudo);
 	res.send();
 });
 

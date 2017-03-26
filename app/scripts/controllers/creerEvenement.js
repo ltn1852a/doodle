@@ -12,12 +12,14 @@ angular.module('nodejsApp')
 angular.module('nodejsApp')
   .controller('CreerEventsCtrl',
     function($scope, CreerEvenement){
+		$scope.user = window.user;
 		$scope.idEvenement;
 		$scope.descEvenement;
 		
 		$scope.creer = function(){
-			var evenement = {"idEvenement" : $scope.idEvenement, "descEvenement" : $scope.descEvenement};
+			var evenement = {"pseudo" : $scope.user.pseudo, "idEvenement" : $scope.idEvenement, "descEvenement" : $scope.descEvenement};
 			CreerEvenement.post(JSON.stringify(evenement));
+			alert("L'événement " + $scope.idEvenement + " a bien été créé.");
 			$scope.idEvenement = "";
 			$scope.descEvenement = "";
 		}

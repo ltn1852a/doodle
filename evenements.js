@@ -41,7 +41,7 @@ var creerEvennement = function (id, description){
 		// on le cree
 		evennements[id] = new Evennement(id, description);
 		//console.log(evennements);
-		return 1;
+		return evennements[id];
 	}
 	return 0;
 };

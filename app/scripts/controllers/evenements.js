@@ -40,6 +40,7 @@ angular.module('nodejsApp')
 		
 			var rep = {"uti" : {"pseudo" : $scope.user.pseudo}, "evt" : $scope.evtCourant, "creneaux" : creneauxEnv};
 			Evenement.post(JSON.stringify(rep));
+			alert("Vous avez validé vos disponibilités.");
 			console.log(rep);
 		}
 		

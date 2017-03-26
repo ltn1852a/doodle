@@ -54,11 +54,7 @@ angular
         controller: 'Authentif',
         controllerAs: 'authentification'
       })
-      .otherwise({
-        redirectTo: '/'
-      });
-
-       .when('/profilUtilisateur', {
+	  .when('/profilUtilisateur', {
         templateUrl: 'views/profilUtilisateur.html',
         controller: 'UtilisateurCtrl',
         controllerAs: 'UtilisateurCtrl'
@@ -66,4 +62,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
   });

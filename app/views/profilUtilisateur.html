@@ -1,16 +1,10 @@
 <div>
 	<h2>Profil utilisateur</h2>
-	<label for="Pseudo">Pseudo :</label>
-	<label type="text" name="PseudoUtilisateur" id="PseudoUtilisateur" class="form-control" ng-model="pseudo"</label>
-	<label for="Pseudo">Prenom :</label>
-	<label type="text" name="PrenomUtilisateur" id="PrenomUtilisateur" class="form-control" ng-model="prenom"</label>
-	<label for="Nom">Nom :</label>
-	<label type="text" name="NomUtilisateur" id="NomUtilisateur" class="form-control" ng-model="nom"</label>
+	<label for="Pseudo">Pseudo : {{user.pseudo}}</label>
+	<label for="Pseudo">Prenom : {{user.prenom}}</label>
+	<label for="Nom">Nom : {{user.nom}}</label>
 
-
-
-
-	<label for="EvenementParticipe">Evenement Participé</label>
+	<p>Evenement Participé</p>
 	<table class="table table-bordered">
 	<thead class="thead-inverse">
 		<tr>
@@ -20,11 +14,33 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="evenement in tab">
+		<tr ng-repeat="evenement in user.evenementsParticiper">
 			<td>{{evenement.id}}</td>
 			<td>{{evenement.description}}</td>
-			<td><label ng-repeat="crenaux in evenement.crenaux"  value={{crenaux.date}}+" "+{{crenaux.heure}}</label></td>
+			<td><ul ng-repeat="crenaux in evenement.creneaux">
+				<li>{{crenaux.date}} {{crenaux.heure}}</li>
+			</ul></td>
 		</tr>
 	</tbody>
-</table>
+	</table>
+	
+	<p>Evenement Créés</p>
+	<table class="table table-bordered">
+	<thead class="thead-inverse">
+		<tr>
+			<th>Evénement</th>
+			<th>Description</th>
+			<th>Crénau(x)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="evenement in user.evenementsCrees">
+			<td>{{evenement.id}}</td>
+			<td>{{evenement.description}}</td>
+			<td><ul ng-repeat="crenaux in evenement.creneaux">
+				<li>{{crenaux.date}} {{crenaux.heure}}</li>
+			</ul></br></td>
+		</tr>
+	</tbody>
+	</table>
 </div>
