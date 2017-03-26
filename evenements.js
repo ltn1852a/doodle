@@ -55,10 +55,35 @@ var ajouterCreneau = function (id, date, heure){
 	return 0;
 };
 
+var ajouterCreneauEvt = function (evenement, date, heure){
+	evenement.creneaux.push(new Creneau(date, heure));
+};
+
+var ajouterCreneauTabEvt = function (evenement, creneaux){
+	for(creneau in creneaux){
+		evenement.creneaux.push(creneaux);
+	}
+};
+
+var creerCreneaux = function (donnees){
+	var rep = new Array();
+	for(donnee in donnees){
+		rep.push(new Creneau(donnee.date, donnee.heure));
+	}
+	return rep;
+};
+
+var ajouerCreneauxEvt = function (evt, donnees){
+	var evts = creerCreneaux(donnees);
+	ajouterCreneauTabEvt(evt, evts);
+}
+
 
 // les 4 fonctions exportées
 exports.evts = evennements;
 exports.getEvt = getEvt;
 exports.creerEvennement = creerEvennement;
+exports.Evennement = Evennement;
+exports.ajouerCreneauxEvt = ajouerCreneauxEvt;
 exports.ajouterCreneau = ajouterCreneau;
 exports.getEvennement=getEvennement;

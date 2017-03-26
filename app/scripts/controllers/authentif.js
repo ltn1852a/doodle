@@ -11,8 +11,9 @@ angular.module('nodejsApp')
 
 angular.module('nodejsApp')
   .controller('Authentif',
-    function($scope, Authentification){
+    function($scope, $rootScope, Authentification){
 		$scope.authentifie = 0;
+		$scope.nom;
 		$scope.inconnu = true;
 		$scope.connu = false;
 		$scope.pseudo;
@@ -27,8 +28,9 @@ angular.module('nodejsApp')
 			console.log("Donnees");
 			//console.log($scope.authentifie);
 			window.user = $scope.authentifie;
-			console.log(window.user.nom);
-			//window.location.href='#/';
+			console.log($scope.nom);
+			$rootScope.authentifie = true;
+			window.location.href='#!/evenements';
 		}
 		
 		$scope.verif = function(){

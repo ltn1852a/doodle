@@ -24,5 +24,6 @@ angular.module('nodejsApp')
 			$scope.nom = "";
 			$scope.prenom = "";
 			$scope.motPasse = "";
+			window.location.href='/';
 		}
 	});

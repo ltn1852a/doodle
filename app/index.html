@@ -50,11 +50,14 @@
             <a class="navbar-brand" href="#/">Doodle</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="TestCtrl">
 
             <ul class="nav navbar-nav">
-				<li><a ng-href="#!/authentification">Authentification</a></li>
-				<li><a ng-href="#!/creerUti">Inscription</a></li>
+				<li ng-if="authentifie==false"><a ng-href="#!/authentification">Authentification</a></li>
+				<li ng-if="authentifie==false"><a ng-href="#!/creerUti">Inscription</a></li>
+				<li ng-if="authentifie"><a href="#!/evenements">Evènements</a></li>
+				<li ng-if="authentifie"><a ng-href="#!/creerEvenement">Créer évènement</a></li>
+				<li ng-if="authentifie"><a ng-href="#!/ajoutCreneau">Ajouter des créneaux</a></li>
             </ul>
           </div>
         </div>
@@ -98,8 +101,14 @@
 
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/main.js"></script>
+	<script src="scripts/controllers/about.js"></script>
+	<script src="scripts/controllers/evenements.js"></script>
+	<script src="scripts/controllers/creerEvenement.js"></script>
 	<script src="scripts/controllers/creerUti.js"></script>
+	<script src="scripts/controllers/ajoutCreneau.js"></script>
 	<script src="scripts/controllers/authentif.js"></script>
+	<script src="scripts/controllers/test.js"></script>
 	<!-- endbuild -->
 </body>
 </html>

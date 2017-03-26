@@ -39,9 +39,9 @@ var creerUtilisateur = function (pseudo, nom, prenom, motPasse){
 	return 0;
 };
 
-var ajouterEvenementsParticiper = function (id, pseudo){
-	if (typeof evenements.evts[id] != 'undefined' && typeof utilisateurs[pseudo] != 'undefined') {
-		utilisateurs[pseudo].evenementsParticiper.push(evenements.evts[id]);
+var ajouterEvenementsParticiper = function (pseudo, evenement){
+	if (typeof utilisateurs[pseudo] != 'undefined') {
+		utilisateurs[pseudo].evenementsParticiper.push(evenement);
 		return 1;
 	}
 	return 0;

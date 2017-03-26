@@ -55,4 +55,14 @@ app.post('/idevenement', function (req, res){
 	res.send();
 });
 
+//Ajouter evenement/créneaux (participer) à utilisateur
+app.post('/ajoutEvtParticiper', function(req, res){
+	var pseudo = req.body.uti.pseudo;
+	var evt = new Evennement(req.body.evt.id, req.body.evt.description);
+	var creneauxTab = req.body.creneaux;
+	evenements.ajouterCreneauxEvt(evt, creneauxTab);
+	utilisateurs.ajouterEvenementsParticiper(pseudo, evt);
+	res.send;
+});
+
 app.listen(8080);

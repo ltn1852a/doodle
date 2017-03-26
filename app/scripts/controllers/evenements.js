@@ -25,10 +25,25 @@ angular.module('nodejsApp')
 angular.module('nodejsApp')
   .controller('EventsCtrl',
     function($scope, Evenement){
-		$scope.tab=Evenement.get();
 		$scope.user = window.user;
-		$scope.details = function(creneaux){
-			$scope.tabCreneaux = creneaux;
+		$scope.tab=Evenement.get();
+		$scope.evtCourant;
+		
+		$scope.details = function(evtCourant){
+			$scope.evtCourant = evtCourant;
+			$scope.tabCreneaux = evtCourant.creneaux;
+		}
+		
+		$scope.valider = function(){
+			var creneauxEnv = document.getElementsByName("accepter");
+			console.log(creneauxEnv);
+			//var rep = {"uti" : {"pseudo" : $scope.user.pseudo}, "evt" : $scope.evtCourant, "creneaux" : creneauxEnv}
+		}
+		
+		var getListeCreneaux = function(elems){
+			for(elem in elems){
+				if(elem.checked == true)
+			}
 		}
 	});
 

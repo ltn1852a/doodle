@@ -24,6 +24,11 @@ angular
         controller: 'Authentif',
         controllerAs: 'authentification'
       })
+	  .when('/autheReussie', {
+        templateUrl: './index_auth.html',
+        controller: 'TestCtrl',
+        controllerAs: 'test'
+      })
       .when('/evenements', {
         templateUrl: 'views/evenements.html',
         controller: 'EventsCtrl',
