@@ -1,0 +1,30 @@
+<div>
+	<h2>Profil utilisateur</h2>
+	<label for="Pseudo">Pseudo :</label>
+	<label type="text" name="PseudoUtilisateur" id="PseudoUtilisateur" class="form-control" ng-model="pseudo"</label>
+	<label for="Pseudo">Prenom :</label>
+	<label type="text" name="PrenomUtilisateur" id="PrenomUtilisateur" class="form-control" ng-model="prenom"</label>
+	<label for="Nom">Nom :</label>
+	<label type="text" name="NomUtilisateur" id="NomUtilisateur" class="form-control" ng-model="nom"</label>
+
+
+
+
+	<label for="EvenementParticipe">Evenement Participé</label>
+	<table class="table table-bordered">
+	<thead class="thead-inverse">
+		<tr>
+			<th>Evénement</th>
+			<th>Description</th>
+			<th>Crénau(x)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="evenement in tab">
+			<td>{{evenement.id}}</td>
+			<td>{{evenement.description}}</td>
+			<td><label ng-repeat="crenaux in evenement.crenaux"  value={{crenaux.date}}+" "+{{crenaux.heure}}</label></td>
+		</tr>
+	</tbody>
+</table>
+</div>

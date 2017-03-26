@@ -57,4 +57,13 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+       .when('/profilUtilisateur', {
+        templateUrl: 'views/profilUtilisateur.html',
+        controller: 'UtilisateurCtrl',
+        controllerAs: 'UtilisateurCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
   });
