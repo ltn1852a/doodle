@@ -11,6 +11,9 @@ function Evennement(id, description) {
 
 }
 
+var evenement = function(id, description){
+	return new Evennement(id, description);
+}
 // Constructeur pour les Creneaux
 function Creneau(date, heure) {
   // date du créneau
@@ -60,20 +63,21 @@ var ajouterCreneauEvt = function (evenement, date, heure){
 };
 
 var ajouterCreneauTabEvt = function (evenement, creneaux){
-	for(var creneau in creneaux){
-		evenement.creneaux.push(creneaux);
+	for(var i = 0; i < creneaux.length; i++){
+		evenement.creneaux.push(creneaux[i]);
 	}
 };
 
 var creerCreneaux = function (donnees){
 	var rep = new Array();
-	for(var donnee in donnees){
-		rep.push(new Creneau(donnee.date, donnee.heure));
+	for(var i = 0; i < donnees.length; i++){
+		var parsed = JSON.parse(donnees[i]);
+		rep.push(new Creneau(parsed.date, parsed.heure));
 	}
 	return rep;
 };
 
-var ajouerCreneauxEvt = function (evt, donnees){
+var ajotuerCreneauxEvt = function (evt, donnees){
 	var evts = creerCreneaux(donnees);
 	ajouterCreneauTabEvt(evt, evts);
 }
@@ -83,7 +87,7 @@ var ajouerCreneauxEvt = function (evt, donnees){
 exports.evts = evennements;
 exports.getEvt = getEvt;
 exports.creerEvennement = creerEvennement;
-exports.Evennement = Evennement;
-exports.ajouerCreneauxEvt = ajouerCreneauxEvt;
+exports.evenement = evenement;
+exports.ajotuerCreneauxEvt = ajotuerCreneauxEvt;
 exports.ajouterCreneau = ajouterCreneau;
 exports.getEvennement=getEvennement;

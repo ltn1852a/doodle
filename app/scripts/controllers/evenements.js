@@ -15,7 +15,7 @@ angular.module('nodejsApp')
       return $resource('/evenements', {},
         {
           'get': {method: 'GET', isArray:true},
-		  'post': {method: 'POST'};
+		  'post': {method: 'POST'}
         }
       );
     }
@@ -39,6 +39,7 @@ angular.module('nodejsApp')
 			var creneauxEnv = getValues( getListeCreneaux( document.getElementsByName("accepter") ) );
 		
 			var rep = {"uti" : {"pseudo" : $scope.user.pseudo}, "evt" : $scope.evtCourant, "creneaux" : creneauxEnv};
+			Evenement.post(JSON.stringify(rep));
 			console.log(rep);
 		}
 		
