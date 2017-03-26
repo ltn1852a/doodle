@@ -21,7 +21,7 @@ function Creneau(date, heure) {
 
 var getEvennement=function(){
 	var tab = new Array();
-	for (prop in evennements) {
+	for (var prop in evennements) {
 		tab.push(evennements[prop]);
 	}
   return tab;
@@ -60,14 +60,14 @@ var ajouterCreneauEvt = function (evenement, date, heure){
 };
 
 var ajouterCreneauTabEvt = function (evenement, creneaux){
-	for(creneau in creneaux){
+	for(var creneau in creneaux){
 		evenement.creneaux.push(creneaux);
 	}
 };
 
 var creerCreneaux = function (donnees){
 	var rep = new Array();
-	for(donnee in donnees){
+	for(var donnee in donnees){
 		rep.push(new Creneau(donnee.date, donnee.heure));
 	}
 	return rep;
